@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>color picker javascript</title>
+</head>
+
+<body>
+    <div id="app"></div>
+    <script>
+        const setElementStyle = (element, styles) => {
+            Object.assign(element.style, styles);
+        };
+
+        const createComponentContainer = (parentComponent) => {
+            const div = document.createElement('div');
+            setElementStyle(div, {
+                height: 'calc(100vh - 1rem)',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center'
+            });
+            parentComponent.appendChild(div);
+            return div;
+        };
+
+        const createComponentCard = (parentComponent) => {
+            const div = document.createElement('div');
+            setElementStyle(div, {
+                border: '1px solid black',
+                paddingTop: '0.5rem',
+                paddingBottom: '2rem',
+                paddingInline: '4rem',
+                backgroundColor: 'white'
+            });
+            parentComponent.appendChild(div);
+            return div;
+        };
+
+        const createComponentCardTitle = (parentComponent, text) => {
+            const h1 = document.createElement('h1');
+            h1.textContent = text;
+            parentComponent.appendChild(h1);
+            return h1;
+        };
+
+        const createComponentCardBody = (parentComponent) => {
+            const div = document.createElement('div');
+            setElementStyle(div, {
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                columnGap: '1rem',
+                fontSize: '1.8rem'
+            });
+            parentComponent.appendChild(div);
+            return div;
+        };
+
+        const createComponentLabel = (parentComponent, targetId, text) => {
+            const label = document.createElement('label');
+            label.setAttribute('for', targetId);
+            label.textContent = text;
+            parentComponent.appendChild(label);
+            return label;
+        };
+
+        const createComponentInputTypeColor = (parentComponent, id, value) => {
+            const input = document.createElement('input');
+            setElementStyle(input, {
+                borderRadius: '0',
+                border: '1px solid black',
+                cursor: 'pointer',
+                backgroundColor: 'white'
+            });
+            input.setAttribute('type', 'color');
+            input.setAttribute('name', 'color');
+            input.setAttribute('id', id);
+            input.setAttribute('value', value);
+            parentComponent.appendChild(input);
+            return input;
+        };
+
+        window.addEventListener('load', () => {
+            const getComponentApp = document.getElementById('app');
+            const getComponentContainer = createComponentContainer(getComponentApp);
+            const getComponentCard = createComponentCard(getComponentContainer);
+            const getComponentCardTitle = createComponentCardTitle(getComponentCard, 'Color Picker JavaScript');
+            const getComponentCardBody = createComponentCardBody(getComponentCard);
+            const getComponentLabelForColor = createComponentLabel(getComponentCardBody, 'color', '#ffffff');
+            const getComponentInputTypeColor = createComponentInputTypeColor(getComponentCardBody, 'color', '#ffffff');
+
+            getComponentInputTypeColor.addEventListener('input', (e) => {
+                localStorage.setItem('color', e.target.value);
+                getComponentContainer.style.backgroundColor = localStorage.getItem('color');
+                getComponentLabelForColor.textContent = localStorage.getItem('color');
+            });
+
+            getComponentInputTypeColor.value = localStorage.getItem('color') || '#ffffff';
+            getComponentContainer.style.backgroundColor = localStorage.getItem('color') || '#ffffff';
+            getComponentLabelForColor.textContent = localStorage.getItem('color') || '#ffffff';
+        });
+    </script>
+</body>
+
+</html>
