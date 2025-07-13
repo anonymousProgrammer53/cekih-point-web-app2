@@ -4,105 +4,434 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>color picker javascript</title>
+    <title>Cekih Point Web App</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-4Q6Gf2aSP4eDXB8Miphtr37CMZZQ5oXLH2yaXMJ2w8e2ZtHTl7GptT4jmndRuHDT" crossorigin="anonymous">
 </head>
 
 <body>
-    <div id="app"></div>
+    <div id="root">
+        <div class="container pt-3 pb-3">
+            <div class="row">
+                <div class="col-12 col-lg-9 mx-auto">
+                    <div class="navbar d-flex align-items-center mb-2">
+                        <div class="navbar-nav mx-auto">
+                            <h2 class="card-title text-center fw-bold text-primary">CEKIH POINT</h2>
+                            <small class="card-subtitle text-center mb-2 d-block">di bikin dengan penuh cinta dan
+                                kasih
+                                sayang
+                                by
+                                <span class="text-danger fw-bold">Ilham Sasuke</span>
+                            </small>
+                        </div>
+                        <ul class="nav nav-underline justify-content-center tablinks ms-auto">
+                            <li class="nav-item">
+                                <a href="#cekihPage" class="nav-link tablink active" data-page="cekihPage">Cekih
+                                    Point</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="#historyPage" class="nav-link tablink" data-page="historyPage">History
+                                    Point</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="tabcontents">
+                        <div id="cekihPage" class="card mb-3 tabcontent">
+                            <div class="card-body">
+                                <div class="d-flex flex-column flex-lg-row gap-3 align-items-start">
+                                    <div class="w-100">
+                                        <div id="cekihPlayer1" class="card mb-3 w-100 btn">
+                                            <div class="card-body d-flex justify-content-between align-items-center">
+                                                <span class="me-end" data-name="playerName"></span>
+                                                <span class="ms-auto fs-4 fw-bold" data-point="pointPlayer"></span>
+                                            </div>
+                                        </div>
+                                        <div id="cekihPlayer2" class="card mb-3 w-100 btn">
+                                            <div class="card-body d-flex justify-content-between align-items-center">
+                                                <span class="me-end" data-name="playerName"></span>
+                                                <span class="ms-auto fs-4 fw-bold" data-point="pointPlayer"></span>
+                                            </div>
+                                        </div>
+                                        <div id="cekihPlayer3" class="card mb-3 w-100 btn">
+                                            <div class="card-body d-flex justify-content-between align-items-center">
+                                                <span class="me-auto" data-name="playerName"></span>
+                                                <span class="ms-auto fs-4 fw-bold" data-point="pointPlayer"></span>
+                                            </div>
+                                        </div>
+                                        <div id="cekihPlayer4" class="card w-100 btn">
+                                            <div class="card-body d-flex justify-content-between align-items-center">
+                                                <span class="me-end" data-name="playerName"></span>
+                                                <span class="ms-auto fs-4 fw-bold" data-point="pointPlayer"></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="card w-100">
+                                        <div class="card-body d-flex gap-3">
+                                            <input id="cekihInsertPoint" name="insertPoint" type="number"
+                                                class="form-control form-control-lg w-100"
+                                                placeholder="Insert point...!" aria-label="Point input">
+                                            <button id="cekihPlusButton"
+                                                class="btn btn-primary btn-lg fw-bold fs-3 w-25">+</button>
+                                            <button id="cekihMinusButton"
+                                                class="btn btn-danger btn-lg fw-bold fs-3 w-25">-</button>
+                                        </div>
+                                        <div class="card-body pt-0">
+                                            <button id="cekihRemovePointButton"
+                                                class="btn btn-danger btn-lg w-100 mb-3 fw-bold">KENA
+                                                KEME</button>
+                                            <button id="cekihResetButton" class="btn btn-primary btn-lg w-100">New
+                                                Game</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="historyPage" class="card mb-3 tabcontent d-none">
+                            <div class="card-body">
+                                <div class="d-flex flex-column flex-lg-row gap-3 align-items-start">
+                                    <div class="w-100 text-center">
+                                        <div class="d-flex gap-3 align-items-center w-100 mb-3">
+                                            <div class="w-100">
+                                                <div id="historyPlayer1" class="btn d-block w-100 card card-body mb-3">
+                                                    <h6 class="card-title fw-bold mb-0" data-name="playerName">
+                                                    </h6>
+                                                </div>
+                                                <div class="card card-body">
+                                                    <ul class="list-group list-group-flush" data-point="pointPlayer">
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                            <div class="w-100">
+                                                <div id="historyPlayer2" class="btn d-block w-100 card card-body mb-3">
+                                                    <h6 class="card-title fw-bold mb-0" data-name="playerName">
+                                                    </h6>
+                                                </div>
+                                                <div class="card card-body">
+                                                    <ul class="list-group list-group-flush" data-point="pointPlayer">
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="d-flex gap-3 align-items-center w-100">
+                                            <div class="w-100">
+                                                <div id="historyPlayer3" class="btn d-block w-100 card card-body mb-3">
+                                                    <h6 class="card-title fw-bold mb-0" data-name="playerName">
+                                                    </h6>
+                                                </div>
+                                                <div class="card card-body">
+                                                    <ul class="list-group list-group-flush" data-point="pointPlayer">
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                            <div class="w-100">
+                                                <div id="historyPlayer4" class="btn d-block w-100 card card-body mb-3">
+                                                    <h6 class="card-title fw-bold mb-0" data-name="playerName">
+                                                    </h6>
+                                                </div>
+                                                <div class="card card-body">
+                                                    <ul class="list-group list-group-flush" data-point="pointPlayer">
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="card w-100">
+                                        <div class="card-body d-flex gap-3">
+                                            <input id="historyInsertPoint" name="insertPoint" type="number"
+                                                class="form-control form-control-lg w-100"
+                                                placeholder="Insert point...!" aria-label="Point input">
+                                            <button id="historyPlusButton"
+                                                class="btn btn-primary btn-lg fw-bold fs-3 w-25">+</button>
+                                            <button id="historyMinusButton"
+                                                class="btn btn-danger btn-lg fw-bold fs-3 w-25">-</button>
+                                        </div>
+                                        <div class="card-body pt-0">
+                                            <button id="historyRemovePointButton"
+                                                class="btn btn-danger btn-lg w-100 mb-3 fw-bold">KENA
+                                                KEME</button>
+                                            <button id="historyResetButton" class="btn btn-primary btn-lg w-100">New
+                                                Game</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO"
+        crossorigin="anonymous"></script>
     <script>
-        const setElementStyle = (element, styles) => {
-            Object.assign(element.style, styles);
-        };
+        // 👨‍🏫 Kelas utama untuk aplikasi Cekih Point
+        class CekihPointWebApp {
+            constructor() {
+                this.initElements();
+                this.initData();
+                this.currentCekihPlayerSelected = null;
+                this.currentHistoryPlayerSelected = null;
+            }
 
-        const createComponentContainer = (parentComponent) => {
-            const div = document.createElement('div');
-            setElementStyle(div, {
-                height: 'calc(100vh - 1rem)',
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center'
-            });
-            parentComponent.appendChild(div);
-            return div;
-        };
+            // 🚀 Titik masuk aplikasi - dijalankan saat halaman dimuat
+            runApp() {
+                window.addEventListener('hashchange', () => this.route());
+                window.addEventListener('DOMContentLoaded', () => {
+                    this.route();
+                    this.render();
+                    this.setupEvents();
+                });
+            }
 
-        const createComponentCard = (parentComponent) => {
-            const div = document.createElement('div');
-            setElementStyle(div, {
-                border: '1px solid black',
-                paddingTop: '0.5rem',
-                paddingBottom: '2rem',
-                paddingInline: '2rem',
-                backgroundColor: 'white',
-                textAlign: 'center'
-            });
-            parentComponent.appendChild(div);
-            return div;
-        };
+            // 🧮 Menyimpan data default pemain (4 pemain dengan poin awal 0)
+            initData() {
+                this.datasCekihPointWebApp = [
+                    { playerName: 'Player Name 1', point: [0] },
+                    { playerName: 'Player Name 2', point: [0] },
+                    { playerName: 'Player Name 3', point: [0] },
+                    { playerName: 'Player Name 4', point: [0] },
+                ];
+            }
 
-        const createComponentCardTitle = (parentComponent, text) => {
-            const h1 = document.createElement('h1');
-            h1.textContent = text;
-            parentComponent.appendChild(h1);
-            return h1;
-        };
+            // 🧱 Ambil semua elemen HTML yang dibutuhkan dan simpan ke dalam properti class
+            initElements() {
+                this.tabLinks = document.querySelector('.tablinks').querySelectorAll('.tablink');
+                this.tabContents = document.querySelector('.tabcontents').querySelectorAll('.tabcontent');
 
-        const createComponentCardBody = (parentComponent) => {
-            const div = document.createElement('div');
-            setElementStyle(div, {
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center',
-                columnGap: '1rem',
-                fontSize: '1.8rem'
-            });
-            parentComponent.appendChild(div);
-            return div;
-        };
+                this.cekihPlayers = [...Array(4)].map((_, i) => document.getElementById(`cekihPlayer${i + 1}`));
+                this.cekihPlayerNames = this.cekihPlayers.map(p => p.querySelector('[data-name="playerName"]'));
+                this.cekihPointPlayers = this.cekihPlayers.map(p => p.querySelector('[data-point="pointPlayer"]'));
 
-        const createComponentLabel = (parentComponent, targetId, text) => {
-            const label = document.createElement('label');
-            label.setAttribute('for', targetId);
-            label.textContent = text;
-            parentComponent.appendChild(label);
-            return label;
-        };
+                this.historyPlayers = [...Array(4)].map((_, i) => document.getElementById(`historyPlayer${i + 1}`));
+                this.historyPlayerNames = this.historyPlayers.map(p => p.querySelector('[data-name="playerName"]'));
+                this.historyPointPlayers = this.historyPlayers.map(p => p.parentElement.querySelector('[data-point="pointPlayer"]'));
 
-        const createComponentInputTypeColor = (parentComponent, id, value) => {
-            const input = document.createElement('input');
-            setElementStyle(input, {
-                borderRadius: '0',
-                border: '1px solid black',
-                cursor: 'pointer',
-                backgroundColor: 'white'
-            });
-            input.setAttribute('type', 'color');
-            input.setAttribute('name', 'color');
-            input.setAttribute('id', id);
-            input.setAttribute('value', value);
-            parentComponent.appendChild(input);
-            return input;
-        };
+                this.cekihInsertPoint = document.getElementById('cekihInsertPoint');
+                this.cekihPlusButton = document.getElementById('cekihPlusButton');
+                this.cekihMinusButton = document.getElementById('cekihMinusButton');
+                this.cekihRemovePointButton = document.getElementById('cekihRemovePointButton');
+                this.cekihResetPointButton = document.getElementById('cekihResetButton');
 
-        window.addEventListener('load', () => {
-            const getComponentApp = document.getElementById('app');
-            const getComponentContainer = createComponentContainer(getComponentApp);
-            const getComponentCard = createComponentCard(getComponentContainer);
-            const getComponentCardTitle = createComponentCardTitle(getComponentCard, 'Color Picker JavaScript');
-            const getComponentCardBody = createComponentCardBody(getComponentCard);
-            const getComponentLabelForColor = createComponentLabel(getComponentCardBody, 'color', '#ffffff');
-            const getComponentInputTypeColor = createComponentInputTypeColor(getComponentCardBody, 'color', '#ffffff');
+                this.historyInsertPoint = document.getElementById('historyInsertPoint');
+                this.historyPlusButton = document.getElementById('historyPlusButton');
+                this.historyMinusButton = document.getElementById('historyMinusButton');
+                this.historyRemovePointButton = document.getElementById('historyRemovePointButton');
+                this.historyResetPointButton = document.getElementById('historyResetButton');
+            }
 
-            getComponentInputTypeColor.addEventListener('input', (e) => {
-                localStorage.setItem('color', e.target.value);
-                getComponentContainer.style.backgroundColor = localStorage.getItem('color');
-                getComponentLabelForColor.textContent = localStorage.getItem('color');
-            });
+            // 🧭 Menampilkan tab berdasarkan hash (#cekihPage, #historyPage, dll.)
+            route() {
+                const hash = window.location.hash.substring(1);
+                let page = 'cekihPage';
+                if (hash !== '') {
+                    page = hash;
+                }
 
-            getComponentInputTypeColor.value = localStorage.getItem('color') || '#ffffff';
-            getComponentContainer.style.backgroundColor = localStorage.getItem('color') || '#ffffff';
-            getComponentLabelForColor.textContent = localStorage.getItem('color') || '#ffffff';
-        });
+                const targetTab = document.getElementById(page);
+
+                if (!targetTab) {
+                    return;
+                }
+
+                this.tabContents.forEach(tabContent => {
+                    tabContent.classList.add('d-none');
+                    tabContent.classList.remove('d-block');
+                });
+
+                this.tabLinks.forEach(tabLink => {
+                    tabLink.classList.remove('active');
+                    if (tabLink.dataset.page === page) {
+                        tabLink.classList.add('active');
+                    }
+                });
+
+                targetTab.classList.remove('d-none');
+                targetTab.classList.add('d-block');
+            }
+
+            // 🖍️ Menampilkan data awal pemain (nama dan poin) ke DOM
+            render() {
+                this.datasCekihPointWebApp.forEach((data, index) => {
+                    this.cekihPlayerNames[index].innerText = data.playerName;
+                    this.cekihPointPlayers[index].innerText = data.point[0];
+                    this.historyPlayerNames[index].innerText = data.playerName;
+                    this.historyPointPlayers[index].innerText = data.point[0];
+                });
+            }
+
+            // 🎯 Inisialisasi semua event interaksi pengguna
+            setupEvents() {
+                this.handleClickPlayerActive();
+                this.setupPointButtons();
+                this.setupRemoveButton();
+                this.setupResetButton();
+            }
+
+            // 🔘 Menangani pemilihan pemain (highlight border + warna)
+            handleClickPlayerActive() {
+                const applyHighlight = (selected, group, currentKey) => {
+                    if (this[currentKey]) {
+                        this[currentKey].classList.remove('border-0', 'bg-primary', 'text-white');
+                    }
+                    this[currentKey] = selected;
+                    this[currentKey].classList.add('border-0', 'bg-primary', 'text-white');
+                };
+
+                this.cekihPlayers.forEach(player => {
+                    player.addEventListener('click', () => applyHighlight(player, this.cekihPlayers, 'currentCekihPlayerSelected'));
+                });
+
+                this.historyPlayers.forEach(player => {
+                    player.addEventListener('click', () => applyHighlight(player, this.historyPlayers, 'currentHistoryPlayerSelected'));
+                });
+            }
+
+            // ➕➖ Menangani logika tambah dan kurang poin pemain
+            setupPointButtons() {
+                const handleCekihPointChange = (isPositive) => {
+                    const index = this.cekihPlayers.indexOf(this.currentCekihPlayerSelected);
+                    if (index === -1) return alert('Tolong pilih pemain Terlebih dahulu ...!');
+
+                    const value = this.cekihInsertPoint.value.trim();
+                    const parsed = parseInt(value);
+
+                    if (value === '') return alert('Input tidak boleh kosong ...!');
+                    if (parsed < 0) return alert('Input tidak boleh angka minus ...!');
+                    if (parsed % 5 !== 0) return alert('Input harus angka kelipatan 5 ...!');
+
+                    let pointToPush = 0;
+                    if (isPositive) {
+                        pointToPush = parsed;
+                    } else {
+                        pointToPush = -parsed;
+                    }
+
+                    this.datasCekihPointWebApp[index].point.push(pointToPush);
+                    const total = this.datasCekihPointWebApp[index].point.reduce((a, b) => a + b, 0);
+                    this.cekihPointPlayers[index].innerText = total;
+                    this.components().liComponent(this.historyPointPlayers[index], this.datasCekihPointWebApp[index].point);
+                };
+
+                this.cekihPlusButton.addEventListener('click', () => handleCekihPointChange(true));
+                this.cekihMinusButton.addEventListener('click', () => handleCekihPointChange(false));
+
+                const handleHistoryPointChange = (isPositive) => {
+                    const index = this.historyPlayers.indexOf(this.currentHistoryPlayerSelected);
+                    console.log(index);
+                    if (index === -1) return alert('Tolong pilih pemain Terlebih dahulu ...!');
+
+                    const value = this.historyInsertPoint.value.trim();
+                    const parsed = parseInt(value);
+
+                    if (value === '') return alert('Input tidak boleh kosong ...!');
+                    if (parsed < 0) return alert('Input tidak boleh angka minus ...!');
+                    if (parsed % 5 !== 0) return alert('Input harus angka kelipatan 5 ...!');
+
+                    let pointToPush = 0;
+                    if (isPositive) {
+                        pointToPush = parsed;
+                    } else {
+                        pointToPush = -parsed;
+                    }
+
+                    this.datasCekihPointWebApp[index].point.push(pointToPush);
+                    const total = this.datasCekihPointWebApp[index].point.reduce((a, b) => a + b, 0);
+                    this.cekihPointPlayers[index].innerText = total;
+                    this.components().liComponent(this.historyPointPlayers[index], this.datasCekihPointWebApp[index].point);
+                };
+
+                this.historyPlusButton.addEventListener('click', () => handleHistoryPointChange(true));
+                this.historyMinusButton.addEventListener('click', () => handleHistoryPointChange(false));
+            }
+
+            // 🧹 Mengembalikan poin pemain jika sudah ≥ 100 (KENA KEME)
+            setupRemoveButton() {
+                this.cekihRemovePointButton.addEventListener('click', () => {
+                    const index = this.cekihPlayers.indexOf(this.currentCekihPlayerSelected);
+                    if (index === -1) return alert('Tolong pilih pemain Terlebih dahulu ...!');
+
+                    const total = parseInt(this.cekihPointPlayers[index].innerText);
+                    if (total < 100) {
+                        return alert('Point dari pemain ini kurang dari 100, jadi tidak KENA KEME');
+                    }
+
+                    const confirmasi = confirm("Apakah yakin pemain ini akan di KEME? jika iya klik tombol OK ...!");
+                    if (!confirmasi) return;
+
+                    alert('Selamat ...!, anda kena KENA KEME, point anda kembali lagi ke 0');
+
+                    this.datasCekihPointWebApp[index].point.push(-total);
+                    this.cekihPointPlayers[index].innerText = 0;
+                    this.components().liComponent(this.historyPointPlayers[index], this.datasCekihPointWebApp[index].point);
+                });
+
+                this.historyRemovePointButton.addEventListener('click', () => {
+                    const index = this.historyPlayers.indexOf(this.currentHistoryPlayerSelected);
+                    if (index === -1) return alert('Tolong pilih pemain Terlebih dahulu ...!');
+
+                    const total = parseInt(this.cekihPointPlayers[index].innerText);
+                    if (total < 100) {
+                        return alert('Point dari pemain ini kurang dari 100, jadi tidak KENA KEME');
+                    }
+
+                    const confirmasi = confirm("Apakah yakin pemain ini akan di KEME? jika iya klik tombol OK ...!");
+                    if (!confirmasi) return;
+
+                    alert('Selamat ...!, anda kena KENA KEME, point anda kembali lagi ke 0');
+
+                    this.datasCekihPointWebApp[index].point.push(-total);
+                    this.cekihPointPlayers[index].innerText = 0;
+                    this.components().liComponent(this.historyPointPlayers[index], this.datasCekihPointWebApp[index].point);
+                });
+            }
+
+            // Mereset point kembali lagi semuanya k 0
+            setupResetButton() {
+                this.cekihResetPointButton.addEventListener('click', () => {
+                    const confirmasi = confirm("Apakah yakin anda ingin memulai permainan baru?, jika iya klik tombol OK ...!");
+                    if (!confirmasi) return;
+
+                    this.datasCekihPointWebApp.forEach((data) => {
+                        data.point.splice(1);
+                    });
+
+                    this.render();
+                });
+
+                this.historyResetPointButton.addEventListener('click', () => {
+                    const confirmasi = confirm("Apakah yakin anda ingin memulai permainan baru?, jika iya klik tombol OK ...!");
+                    if (!confirmasi) return;
+
+                    this.datasCekihPointWebApp.forEach((data) => {
+                        data.point.splice(1);
+                    });
+
+                    this.render();
+                });
+            }
+
+            // 🧩 Komponen bantu untuk menampilkan riwayat poin
+            components() {
+                return {
+                    liComponent: (parent, points) => {
+                        parent.innerHTML = '';
+                        let sum = 0;
+                        points.forEach(point => {
+                            sum += point;
+                            const li = document.createElement('li');
+                            li.classList.add('list-group-item');
+                            li.innerText = sum;
+                            parent.appendChild(li);
+                        });
+                    }
+                };
+            }
+        }
+
+        // 🔥 Buat instance aplikasi dan jalankan
+        const cekihPointWebApp = new CekihPointWebApp();
+        cekihPointWebApp.runApp();
     </script>
 </body>
 
